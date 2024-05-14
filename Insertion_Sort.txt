@@ -1,0 +1,40 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Insertion {
+    
+    public static void InsertionSort(int[] arr)
+    {
+        for (int i = 1; i < arr.length; i++)
+        {
+            int idx = i;
+            int current_value = arr[i];
+            
+            for (int j = i - 1; j >= 0; j--)
+            {
+                if (current_value < arr[j])
+                {
+                    arr[j+1] = arr[j];
+                    idx = j;
+                }
+                else {
+                    break;
+                }
+            }
+            
+            arr[idx] = current_value;
+            
+        }
+    }
+    
+    public static void main(String[] args) {
+        int[] arr = {64, 34, 25, 12, 22, 11, 90, 5};
+        
+        InsertionSort(arr);
+        
+        for (int i = 0; i < arr.length; i++)
+        {
+            System.out.println(arr[i]);
+        }
+    }
+}
